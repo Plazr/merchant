@@ -1,15 +1,14 @@
 Merchant::Application.routes.draw do
-  resources :order_transactions
 
-  resources :orders
+  match 'current_cart', :to => 'carts#show', :id => 'current', :as => 'current_cart'
 
   resources :line_items
-
   resources :carts
-
   resources :products
-
   resources :categories
+  resources :orders
+
+  root :to => 'products#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

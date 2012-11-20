@@ -34,4 +34,13 @@ Merchant::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.after_initialize do
+    ActiveMerchant::Billing::Base.mode = :test
+    ::GATEWAY = ActiveMerchant::Billing::PaypalGateway.new(
+      :login => "cedric_1353433933_biz_api1.gmail.com",
+      :password => "1353433986",
+      :signature => "AiXCG6Dgq71RDGMWsqaf8W.i1-3SAUd8Yp-IAHafL2XLp.emOnIwkAqf"
+    )
+  end
 end
