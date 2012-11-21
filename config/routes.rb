@@ -6,7 +6,11 @@ Merchant::Application.routes.draw do
   resources :carts
   resources :products
   resources :categories
-  resources :orders
+  resources :orders do
+    member do
+      get 'express'
+    end
+  end
 
   root :to => 'products#index'
 
