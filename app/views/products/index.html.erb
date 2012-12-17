@@ -5,9 +5,13 @@
     <h3>
       <%= link_to h(product.name), product %>
       <%= number_to_currency(product.price) %>
+			<%= link_to "Remove", product_path(product), method: :delete %>
     </h3>
     <div class="actions">
       <%= link_to "Add to Cart", line_items_path(:product_id => product), :method => :post %>
     </div>
   </div>
 <% end %>
+
+<%= link_to "Add product", new_product_path %><br>
+<%= link_to "Show Cart", current_cart_path %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121121002651) do
+ActiveRecord::Schema.define(:version => 20121215174314) do
 
   create_table "carts", :force => true do |t|
     t.datetime "purchased_at"
@@ -49,8 +49,6 @@ ActiveRecord::Schema.define(:version => 20121121002651) do
     t.datetime "updated_at",    :null => false
   end
 
-  add_index "order_transactions", ["order_id"], :name => "index_order_transactions_on_order_id"
-
   create_table "orders", :force => true do |t|
     t.integer  "cart_id"
     t.string   "ip_address"
@@ -65,6 +63,14 @@ ActiveRecord::Schema.define(:version => 20121121002651) do
   end
 
   add_index "orders", ["cart_id"], :name => "index_orders_on_cart_id"
+
+  create_table "paypal_accounts", :force => true do |t|
+    t.string   "login"
+    t.string   "password"
+    t.string   "signature"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "products", :force => true do |t|
     t.string   "name"

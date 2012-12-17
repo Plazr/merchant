@@ -1,4 +1,6 @@
 class ApplicationController < ActionController::Base
+  include OrdersHelper
+  
   protect_from_forgery
 
   def current_cart
@@ -12,4 +14,5 @@ class ApplicationController < ActionController::Base
     end
     @current_cart
   end
+  
 end

@@ -1,7 +1,12 @@
 Merchant::Application.routes.draw do
 
+  get "paypal_accounts/new"
+
+  get "paypal_accounts/edit"
+
   match 'current_cart', :to => 'carts#show', :id => 'current', :as => 'current_cart'
 
+  resources :paypal_accounts
   resources :line_items
   resources :carts
   resources :products

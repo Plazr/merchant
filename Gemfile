@@ -6,8 +6,7 @@ gem 'rails', '3.2.8'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
-gem "activemerchant"
-
+gem 'activemerchant', :require => 'active_merchant'
 
 # Gems used only for assets and not required
 # in production environments by default.

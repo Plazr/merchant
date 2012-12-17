@@ -1,0 +1,12 @@
+<h1>PaypalAccounts#new</h1>
+
+<%= form_for @paypal_account do |f| %>
+  <%= f.label :login, "API Username" %>
+	<%= f.text_field :login %><br>
+	<%= f.label :password, "API Password" %>
+	<%= f.text_field :password %><br>
+	<%= f.label :signature, "Signature" %>
+	<%= f.text_field :signature %><br>
+	
+	<p><%= f.submit "Submit" %></p>
+<% end %>
